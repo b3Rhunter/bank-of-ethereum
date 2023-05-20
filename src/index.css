@@ -1,0 +1,124 @@
+body {
+  margin: 0;
+  padding: 0;
+font-family: 'Roboto Slab', serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #229395;
+  color: white;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+img {
+  max-width: 100%;
+}
+
+.connect {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 999px;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.left-column, .right-column {
+  flex: 1;
+  margin: 10px;
+  min-height: 100vh;
+}
+
+.right-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.left-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+h1 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+button {
+background: rgba(255, 255, 255, 0.2);
+border-radius: 7px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+padding: 7px 14px;
+color: white;
+}
+
+.controls {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.2);
+border-radius: 7px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+padding: 1rem;
+}
+
+.controls button {
+  width: 100%;
+  margin-top: 7px;
+  margin-bottom: 7px;
+}
+
+.controls h1 {
+  width: 100%;
+}
+
+input {
+  width: 97%;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  margin-bottom: 7px;
+  text-align: center;
+  border-radius: 7px;
+  border: 1px solid white;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 768px) {
+  .content {
+      flex-direction: column;
+  }
+
+  .left-column, .right-column {
+      margin: 10px 0;
+      height: 50%;
+  }
+}
+
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
