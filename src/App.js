@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import heroImage from './images/bg.png';
+import icon from './images/icon.png';
 import { ethers } from 'ethers';
 import ABI from './ABI.json';
 
@@ -50,6 +51,7 @@ const handleWithdraw = () => {
 
   return (
     <div className='app'>
+      <img className='icon' src={icon} alt="logo"/>
       <button className='connect' onClick={connect}>Connect</button>
       <div className="content">
         <div className="left-column">
@@ -70,7 +72,7 @@ const handleWithdraw = () => {
         </div>
 
         <div className="right-column">
-          <img src={heroImage} alt='hero' />
+          <img className='hero' src={heroImage} alt='hero' />
         </div>
       </div>
     </div>
