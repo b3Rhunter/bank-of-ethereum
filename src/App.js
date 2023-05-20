@@ -82,7 +82,7 @@ const handleWithdraw = () => {
         <div className="left-column">
           
           <div className='controls'>
-          <h1>Bank of Ethereum</h1>
+          <h1>Bank <span className='of'>of</span> <span class='ethereum'>Ethereum</span></h1>
           <hr/>
           <input
             type="text"

@@ -77,6 +77,15 @@ h1 {
   animation: gradient 5s ease-in-out infinite;
   margin: 0;
   padding: 0;
+  text-transform: uppercase;
+}
+
+.of {
+  color: white;
+  font-size: 1.2rem;
+  position: relative;
+  top: -4px;
+  text-transform: lowercase;
 }
 
 button {
@@ -169,6 +178,28 @@ input {
     background-position: 100%;
   }
 }
+
+/* Add this to your existing CSS */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+.ethereum {
+  white-space: nowrap; /* Keep text on a single line */
+  overflow: hidden; /* Ensures the content is clipped */
+  border-right: .15em solid rgb(246, 164, 255); /* Cursor */
+  padding-right: 10px;
+  animation:
+    typing 3.5s steps(40, end),
+    blink .75s step-end infinite;
+}
+
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
