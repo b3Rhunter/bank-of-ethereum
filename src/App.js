@@ -7,14 +7,33 @@ import ABI from './ABI.json';
 const contractAddress = '0x86C6cdA1D3Be753e7E1298292E951ED2c44C5627'
 
 function App() {
-
+  const [name, setName] = useState("")
+  const [connected, isConnected] = useState(false)
   const [amount, setAmount] = useState('');
 
   const connect = async () => {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     await provider.send("eth_requestAccounts", []);
     const signer = provider.getSigner();
+    const { ethereum } = window;
+    if(ethereum) {
+      const ensProvider = new ethers.providers.InfuraProvider('mainnet');
+      const signer = provider.getSigner();
+      const address = await signer.getAddress();
+      const displayAddress = address?.substr(0, 6) + "...";
+      const ens = await ensProvider.lookupAddress(address);
+      if (ens !== null) {
+        setName(ens)
+
+      } else {
+        setName(displayAddress)
+
+      }
+    } else {
+      alert('no wallet detected!')
+    }
     await signer.signMessage("Welcome to the Bank of Ethereum.");
+    isConnected(true)
   }
 
   const deposit = async (amount) => {
@@ -52,12 +71,19 @@ const handleWithdraw = () => {
   return (
     <div className='app'>
       <img className='icon' src={icon} alt="logo"/>
-      <button className='connect' onClick={connect}>Connect</button>
+      {connected && (
+        <button className='connect' onClick={connect}>{name}</button>
+      )}
+      {!connected && (
+        <button className='connect' onClick={connect}>Connect</button>
+      )}
+      
       <div className="content">
         <div className="left-column">
           
           <div className='controls'>
           <h1>Bank of Ethereum</h1>
+          <hr/>
           <input
             type="text"
             placeholder="Enter amount"

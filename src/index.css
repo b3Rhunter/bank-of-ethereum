@@ -37,7 +37,7 @@ img {
   z-index: 999;
   background: rgb(252,41,249);
   background: linear-gradient(329deg, rgba(252,41,249,0.2) 0%, rgba(13,10,31,0) 100%);
-  border: 1px solid rgb(252,41,249);
+  border: 1px solid rgba(252,41,249,0.2);
 }
 
 .content {
@@ -70,11 +70,13 @@ img {
 h1 {
   font-size: 2rem;
   text-align: center;
-  background: #FFFFFF;
-background: linear-gradient(to right, #FFFFFF 0%, #FFDEFE 100%);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-
+  background: linear-gradient(90deg, white, rgb(217, 104, 255));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: gradient 5s ease-in-out infinite;
+  margin: 0;
+  padding: 0;
 }
 
 button {
@@ -86,6 +88,26 @@ backdrop-filter: blur(5px);
 border: 1px solid rgba(255, 255, 255, 0.3);
 padding: 7px 14px;
 color: white;
+transition: 0.3s;
+}
+
+button:hover {
+  transform: translateY(-3px);
+}
+
+button:active {
+  transform: translateY(3px);
+}
+
+hr {
+  width: 95%;
+  height: 1px;
+  border: none;
+  margin-top: 3px;
+  margin-bottom: 32px;
+  padding: 0;
+  background: rgb(255, 118, 253);
+  background: radial-gradient(circle, rgb(253, 121, 251) 0%, rgba(255,255,255,0) 100%);
 }
 
 .controls {
@@ -139,6 +161,14 @@ input {
 
 }
 
+@keyframes gradient {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
