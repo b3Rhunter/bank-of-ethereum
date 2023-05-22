@@ -4,7 +4,7 @@ import icon from './images/icon.png';
 import { ethers } from 'ethers';
 import ABI from './ABI.json';
 
-const contractAddress = '0x86C6cdA1D3Be753e7E1298292E951ED2c44C5627'
+const contractAddress = '0xbD0B925689D83450b766De335eEb10e871775a80'
 
 function App() {
   const [name, setName] = useState("")
